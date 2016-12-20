@@ -1,0 +1,24 @@
+{
+	"worker": [
+		{
+			"name":"admin",
+			"pass":"123456",
+			"access": "admin"
+		},
+		{
+			"name":"marcelo",
+			"pass":"123456",
+			"access": "user"
+		},
+		{
+			"name":"glauro",
+			"pass":"123456",
+			"access": "admin"
+		},
+		{
+			"name":"user",
+			"pass":"123456",
+			"access": "user"
+		}
+	]
+}

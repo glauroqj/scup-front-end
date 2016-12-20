@@ -1,0 +1,128 @@
+<div class="login-screen" data-ng-controller="PrincipalController as Principal">
+  <div class="grid-info">
+    <div class="container">
+      <div class="row">
+
+        <div class="lista clearfix">
+
+          <div class="col-md-offset-1 col-lg-offset-1 col-sm-12 col-md-10 col-lg-10">
+            <div class="box-login">
+              <div class="titulo-login">
+                Scup Fale
+              </div>
+
+              <div class="form-login clearfix">
+                <div class="text-center">
+                  <h4>Comparar Preços</h4>
+                </div>
+                <form>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <span class="input-group-addon">Origem</span>
+                        <select class="form-control" name="origem" id="origem" data-ng-model="origem">
+                          <option value="{{info.ddd}}" data-ng-repeat="info in Principal.infos.data">
+                            {{info.ddd}} - {{info.city}}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <span class="input-group-addon">Destino</span>
+                        <select class="form-control" name="destino" id="destino" data-ng-model="destino">
+                          <option value="{{info.ddd}}" data-ng-repeat="info in Principal.infos.data">
+                            {{info.ddd}} - {{info.city}}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <span class="input-group-addon">Tempo</span>
+                        <input type="number" class="form-control" placeholder="Tempo" name="tempo" id="tempo" data-ng-model="tempo" required="">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="form-group text-right">
+                      <button type="submit" class="btn btn-login btn-md" data-ng-click="Principal.calcular(origem, destino, tempo)">Calcular</button>
+                    </div>
+                  </div>
+                </form>
+
+                <div class="col-md-12">
+                  <fieldset>
+
+                    <div class="form-group">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control input-md" name="user" id="user" data-ng-model="user" required="" placeholder="login">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+                        <input type="password" class="form-control input-md" name="password" id="password" data-ng-model="password"  required="" placeholder="senha">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="col-lg-offset-2 col-lg-8">
+                        <button type="submit" class="btn btn-login btn-md btn-block">Entrar</button>
+                      </div>
+                    </div>
+
+                  </fieldset>
+                </div>
+
+              </div> <!-- form login -->
+
+            </div>
+          </div>
+
+        </div>
+      </div> <!-- row -->
+
+      <div class="row">
+      <div class="col-md-3 text-center">
+          <h4>Fale + 30</h4>
+          <div class="price">
+            R$ <span></span>
+          </div>
+        </div>
+
+        <div class="col-md-3 text-center">
+          <h4>Fale + 60</h4>
+          <div class="price">
+            R$ <span></span>
+          </div>
+        </div>
+
+        <div class="col-md-3 text-center">
+          <h4>Fale + 120</h4>
+          <div class="price">
+            R$ <span></span>
+          </div>
+        </div>
+
+        <div class="col-md-3 text-center">
+          <h4>Normal</h4>
+          <div class="price">
+            R$ <span></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>

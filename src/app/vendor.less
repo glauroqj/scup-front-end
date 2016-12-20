@@ -1,0 +1,793 @@
+/**
+ *  Do not remove this comments bellow. It's the markers used by wiredep to inject
+ *  less dependencies when defined in the bower.json of your dependencies
+ */
+// bower:less
+// endbower
+
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap/less/variables.less
+ */
+ //variables
+ @principal-color: #f43b52;
+ @principal-color-dark: #B42C3D;
+
+ @success: #2ECC71;
+ @success-dark: #28B263;
+ @background-search: #4992fc;
+ @border-search: #407fda;
+
+ @gray-color: #cccccc;
+ @gray-color-dark: #cecece;
+
+ @highlight: #e8b043;
+ @highlight-dark: #CE9D3C;
+ @facebook: #50649f;
+ @facebook-dark: #435485;
+
+ .transition {
+ 	-webkit-transition: all 0.3s ease-out;
+ 	-moz-transition: all 0.3s ease-out;
+ 	-o-transition: all 0.3s ease-out;
+ 	transition: all 0.3s ease-out;
+ }
+
+ html, body {
+ 	font-family: 'Open Sans', sans-serif;
+ 	padding-right: inherit !important;
+ 	overflow-x: hidden;
+ 	min-height: 100%;
+ 	&:extend(.transition);
+
+ 	::selection {
+ 		color: #ffffff;
+ 		background: @principal-color;
+ 	}
+ 	::-moz-selection { /* Code for Firefox */
+ 		color: #ffffff;
+ 		background: @principal-color;
+ 	}
+
+ 	a {
+ 		&:extend(.transition);
+ 		&:hover {
+ 			text-decoration: none;
+ 			color: @principal-color;
+ 		}
+ 		&:focus {
+ 			text-decoration: none;
+ 			outline-color: @principal-color;
+ 		}
+ 	}
+ 	i {
+ 		&:extend(.transition);
+ 	}
+	//overlay
+	.overlay{
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 10;
+		background-color: rgba(0,0,0,0.5); /*dim the background*/
+	}
+	//buttons
+	.btn {
+		border-radius: 0px;
+		text-transform: uppercase;
+		&:extend(.transition);
+		i {
+		}
+		&:hover {
+			i {
+			}
+		}
+		&:focus, &:active  {
+			outline: none !important;
+			color: #ffffff;
+		}
+	}//btn
+
+	button {
+		outline: none !important;
+		&:extend(.transition);
+		&:active  {
+			outline: none !important;
+			color: #ffffff;
+		}
+		&:focus {
+			outline: none !important;
+		}
+		&:hover {
+		}
+	}
+	.btn-decora {
+		background-color: @principal-color;
+		border-color: @principal-color-dark;
+		color: #ffffff;
+		&:hover {
+			color: #ffffff;
+		}
+	}
+
+	.btn-login {
+		background-color: @success;
+		color: #ffffff;
+		margin-top: 5px;
+		font-weight: 600;
+		&:hover {
+			color: #ffffff;
+			background-color: @success-dark;
+			border-color: @success-dark;
+		}
+	}
+
+	.btn-decora-dark {
+		background-color: @principal-color-dark;
+		color: #ffffff;
+		&:hover {
+			background-color: #ffffff;
+			border-color: @principal-color-dark;
+			color: @principal-color-dark;
+		}
+	}
+
+	.btn-gray {
+		color: #484848;
+		border: 1px solid @gray-color;
+		background-color: transparent;
+		&:hover {
+			background-color: transparent;
+		}
+	}
+
+	.btn-comum {
+		color: #484848;
+		border: 1px solid @gray-color;
+		background-color: transparent;
+		&:hover {
+			background-color: #e8eded;
+			border-color: #e8eded;
+		}
+	}
+
+	.btn-enter {
+		color: #ffffff;
+		text-transform: uppercase;
+		background: @principal-color;
+		border: 1px solid @principal-color;
+		color: #fff;
+		width: 100%;
+		height: 50px;
+		padding: 12px 0;
+		&:hover {
+			color: #ffffff;
+			background: @principal-color-dark;
+		}
+	}
+
+	.btn-success {
+		background-color: @success;
+		color: #ffffff;
+		&:hover {
+			background-color: @success;
+			border-color: @success;
+			color: #ffffff;
+		}
+	}
+	.btn-gold {
+		background-color: @highlight;
+		color: #ffffff;
+		&:hover {
+			background-color: #ffffff;
+			border-color: @highlight;
+			color: @highlight;
+		}
+	}
+	//loading
+	.loading {
+		background-image: url('../images/loading.gif');
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		height: 40px;
+		width: auto;
+		position: absolute;
+		left: 0;
+		right: 0;
+		&:after {
+			content: 'carregando...';
+			display: block;
+			color: #878787;
+			top: 40px;
+			text-transform: uppercase;
+			width: 100%;
+			text-align: center;
+			position: relative;
+		}
+	}
+
+	//input
+	input {
+		box-shadow: none !important;
+		font-size: 1em;
+		color: #373737;
+		border-style: solid;
+		border: 1px solid #e8eded;
+		&::-webkit-input-placeholder {
+			color: #c7c7c7;
+			font-weight: 300;
+		}
+		&:-ms-input-placeholder {
+			color: #c7c7c7;
+			font-weight: 300;
+		}
+		&::-moz-placeholder {
+			color: #c7c7c7;
+			font-weight: 300;
+		}
+		&:-moz-placeholder {
+			color: #c7c7c7;
+			font-weight: 300;
+		}
+		&:focus {
+			outline: 0 !important;
+			box-shadow: none !important;
+			border-color: @principal-color !important;
+		}
+		}//input
+		textarea {
+			box-shadow: none !important;
+			font-size: 1em;
+			color: #373737;
+			&:focus {
+				outline: 0 !important;
+				box-shadow: none !important;
+				border-color: @principal-color !important;
+			}
+			&::-webkit-input-placeholder {
+				color:    #c7c7c7;
+				font-weight: 300;
+			}
+			&:-moz-placeholder {
+				color:    #c7c7c7;
+				font-weight: 300;
+			}
+		}//textarea
+		select {
+			box-shadow: none !important;
+			font-size: 1em;
+			color: #373737;
+			&::-webkit-input-placeholder {
+				color: #c7c7c7;
+				font-weight: 300;
+			}
+			&:-ms-input-placeholder {
+				color: #c7c7c7;
+				font-weight: 300;
+			}
+			&::-moz-placeholder {
+				color: #c7c7c7;
+				font-weight: 300;
+			}
+			&:-moz-placeholder {
+				color: #c7c7c7;
+				font-weight: 300;
+			}
+			&:focus {
+				outline: 0 !important;
+				box-shadow: none !important;
+				border-color: @principal-color !important;
+			}
+		}//select
+
+
+		input {
+			box-shadow: none !important;
+			font-size: 1em;
+			color: #373737;
+			&::-webkit-input-placeholder {
+				color: #c7c7c7;
+				font-weight: 300;
+			}
+			&:-ms-input-placeholder {
+				color: #c7c7c7;
+				font-weight: 300;
+			}
+			&::-moz-placeholder {
+				color: #c7c7c7;
+				font-weight: 300;
+			}
+			&:-moz-placeholder {
+				color: #c7c7c7;
+				font-weight: 300;
+			}
+			&:focus {
+				outline: 0 !important;
+				box-shadow: none !important;
+				border-color: @principal-color !important;
+			}
+		}//input
+		textarea {
+			box-shadow: none !important;
+			font-size: 1em;
+			color: #373737;
+			&:focus {
+				outline: 0 !important;
+				box-shadow: none !important;
+				border-color: @principal-color !important;
+			}
+			&::-webkit-input-placeholder {
+				color:    #c7c7c7;
+				font-weight: 300;
+			}
+			&:-moz-placeholder {
+				color:    #c7c7c7;
+				font-weight: 300;
+			}
+	}//textarea
+	select {
+		box-shadow: none !important;
+		font-size: 1em;
+		color: #373737;
+		&::-webkit-input-placeholder {
+			color: #c7c7c7;
+			font-weight: 300;
+		}
+		&:-ms-input-placeholder {
+			color: #c7c7c7;
+			font-weight: 300;
+		}
+		&::-moz-placeholder {
+			color: #c7c7c7;
+			font-weight: 300;
+		}
+		&:-moz-placeholder {
+			color: #c7c7c7;
+			font-weight: 300;
+		}
+		&:focus {
+			outline: 0 !important;
+			box-shadow: none !important;
+			border-color: @principal-color !important;
+		}
+	}//select
+
+	header {
+		.header-mobile {
+			.logo {
+				color: #fff;
+				img {
+					height: auto;
+					width: 30%;
+					padding-top: 5px;
+				}
+				span {
+					position: relative;
+					top: 10px;
+					font-size: 1.2em;
+				}
+			}
+			.user-options {
+				button {
+					background: transparent;
+					border: 1px solid #fff;
+					padding: 5px 10px;
+					&:focus {
+						background-color: @principal-color-dark;
+					}
+				}
+			}
+			.navbar-nav {
+				li {
+					a {
+						text-transform: capitalize;
+						font-weight: 300;
+						font-size: 1.2em;
+						color: #ffffff;
+					}
+				}
+			}
+		}
+		.navbar {
+			background-color: @principal-color;
+			color: #ffffff;
+			margin-bottom: 0px;
+			border-color: @principal-color-dark;
+			border-width: 0 0px 2px 0px;
+			border-radius: 0px;
+		}
+		.logo {
+			color: #fff;
+			img {
+				height: auto;
+				width: 30%;
+				padding-top: 5px;
+			}
+			span {
+				position: relative;
+				top: 10px;
+				font-size: 1.2em;
+			}
+		}
+		.bar-options {
+			ul {
+				margin-bottom: 0px;
+				margin-top: 8px;
+			}
+		}
+		.user-options {
+			button {
+				background: transparent;
+				border: 1px solid #fff;
+				padding: 5px 10px;
+			}
+		}
+	}
+
+	.login-screen {
+		margin-top: 150px;
+		.box-login {
+			background-color: #f5f5f5;
+			padding: 15px;
+			border: 1px solid #D4D4D4;
+			.titulo-login {
+				font-size: 1.5em;
+				font-weight: 600;
+				text-transform: uppercase;
+				margin-bottom: 10px;
+				margin-top: 10px;
+				//border-bottom: 1px solid #e8eded;
+				text-align: center;
+			}
+		}
+	}
+
+	.titulo-top {
+		background-color: #e8eded;
+		padding: 25px 0px;
+		span {
+			font-size: 1.8em;
+			font-weight: 300;
+			color: #484848;
+			text-transform: uppercase;
+		}
+	}
+
+	.grid-info {
+		margin-top: 40px;
+		.list-group-item {
+			+ .active {
+				background-color: @principal-color;
+				border-color: @principal-color;
+				font-weight: 600;
+			}
+		}
+	}
+
+	.box-fechar-bimestre {
+		.row {
+			margin-bottom: 15px;
+		}
+	}
+
+	.side-menu {
+		div {
+			z-index: 99
+		}
+		.list-group {
+			.titulo {
+				font-size: 1.2em;
+				font-weight: 400;
+				background-color: #e8eded;
+				text-transform: uppercase;
+			}
+			a {
+				text-transform: capitalize;
+				font-weight: 300;
+				font-size: 1.2em;
+				&:hover {
+
+				}
+			}
+		}
+	}
+
+	.lista {
+		.box-dashboard {
+			border: 1px solid #eee;
+			padding: 20px;
+			&:first-child {
+				margin-bottom: 20px;
+			}
+		}
+		.titulo-sala {
+			font-size: 1.2em;
+			font-weight: 600;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+			margin-top: 10px;
+			padding-bottom: 10px;
+			border-bottom: 1px solid #e8eded;
+		}
+		.box-sala {
+			ul {
+				margin-bottom: 0;
+				padding-bottom: 10px;
+			}
+		}
+		.titulo-chamada {
+			margin-top: 10px;
+			margin-bottom: 20px;
+			font-size: 1.2em;
+			font-weight: 400;
+			text-align: center;
+		}
+		.box-alunos-editar {
+			border: 1px solid #e8eded;
+			border-radius: 5px;
+			margin-bottom: 40px;
+		}
+		.lista-presenca-editar {
+			padding: 10px;
+			&:nth-child(even) {
+				background-color: #e8eded;
+			}
+		}
+		.gerenciar-notas-editar {
+			.row {
+				padding: 10px;
+				margin-left: 0px;
+				margin-right: 0px;
+				padding: 10px;
+				&:nth-child(even) {
+					background-color: #e8eded;
+				}
+				.box-avaliacoes {
+					ul {
+						margin-bottom: 0px;
+						padding-bottom: 0px;
+						li {
+							input {
+								box-shadow: none !important;
+								font-size: 1.1em;
+								color: #373737;
+								border-radius: 5px;
+								padding: 0px 5px;
+								&:focus {
+									outline: 0 !important;
+									box-shadow: none !important;
+									border-color: @principal-color !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.list-group {
+			li {
+				padding: 0px;
+				&:hover {
+					cursor: pointer;
+					background-color: #e8eded;
+				}
+				a {
+					display: block;
+					padding: 10px 15px;
+				}
+			}
+		}
+		.list-okay {
+			color: #cecece;
+			.row {
+				> div {
+					text-decoration: line-through;
+				}
+			}
+		}
+		.list-none {
+			color: #484848;
+			font-weight: 700;
+		}
+		.filtro {
+			margin: 15px 0px;
+			label {
+				font-weight: 400;
+				font-size: 1.1em;
+			}
+			input {
+				box-shadow: none !important;
+				font-size: 1.1em;
+				color: #373737;
+				border-radius: 5px;
+				padding: 5px;
+				border-style: solid;
+				border: 1px solid #e8eded;
+				&:focus {
+					outline: 0 !important;
+					box-shadow: none !important;
+					border-color: @principal-color !important;
+				}
+			}
+		}
+		.btn-fechar {
+			margin: 15px 0px;
+			padding-top: 15px;
+			border-top: 1px solid #e8eded;
+		}
+		.box-presenca {
+			min-height: 250px;
+			.stack {
+				text-align: center;
+				li {
+					width: 100%;
+					height: auto;
+					list-style: none;
+					background: #fff;
+					border-radius: 5px;
+					position: absolute;
+					top: 50px;
+					left: 0;
+					box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 1px 1px 1px rgba(0, 0, 0, 0.2);
+					cursor: move;
+					.photo {
+						img {
+							width: auto;
+							height: auto;
+							max-height: 210px;
+							padding: 10px;
+						}
+					}
+					.name {
+						font-size: 1.2em;
+						font-weight: 400;
+					}
+				}
+			}
+		}
+	}
+
+	//media-queries
+	/* TABLET */
+	/* Portrait */
+	@media only screen 
+	and (min-device-width: 768px) 
+	and (max-device-width: 1024px) 
+	and (orientation: portrait) 
+	and (-webkit-min-device-pixel-ratio: 2) {
+
+
+	}//end
+	/* Landscape */
+	@media only screen 
+	and (min-device-width: 768px) 
+	and (max-device-width: 1024px) 
+	and (orientation: landscape) 
+	and (-webkit-min-device-pixel-ratio: 2) {
+
+	}//end
+	/* MOBILE */
+	/* Portrait 320px */
+	@media only screen 
+	and (min-device-width: 320px) 
+	and (max-device-width: 480px)
+	and (-webkit-min-device-pixel-ratio: 2)
+	and (orientation: portrait) {
+
+
+	}//end
+	/* Landscape 320px */
+	@media only screen 
+	and (min-device-width: 320px) 
+	and (max-device-width: 760px)
+	and (-webkit-min-device-pixel-ratio: 2)
+	and (orientation: landscape) {
+
+	}//end
+
+}//html, body
+
+.no-scroll {
+	overflow-y: hidden;
+}//no-scroll
+/* tema bootstrap */
+
+/**
+ * angular-ui-notification - Angular.js service providing simple notifications using Bootstrap 3 styles with css transitions for animating
+ * @author Alex_Crack
+ * @version v0.2.0
+ * @link https://github.com/alexcrack/angular-ui-notification
+ * @license MIT
+ */
+ .ui-notification
+ {
+ 	font-family: 'Open Sans', sans-serif;
+ 	position: fixed;
+ 	z-index: 9999;
+
+ 	width: 300px;
+
+ 	-webkit-transition: all ease .5s;
+ 	-o-transition: all ease .5s;
+ 	transition: all ease .5s;
+
+ 	color: #fff;
+ 	border-radius: 0;
+ 	text-align: center;
+ 	font-weight: 600;
+ 	background: #337ab7;
+ 	//box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+ }
+ .ui-notification.clickable
+ {
+ 	cursor: pointer;
+ }
+ .ui-notification.clickable:hover
+ {
+ 	opacity: .7;
+ }
+ .ui-notification.killed
+ {
+ 	-webkit-transition: opacity ease 1s;
+ 	-o-transition: opacity ease 1s;
+ 	transition: opacity ease 1s;
+
+ 	opacity: 0;
+ }
+ .ui-notification > h3
+ {
+ 	font-size: 14px;
+ 	font-weight: bold;
+
+ 	display: block;
+
+ 	margin: 10px 10px 0 10px;
+ 	padding: 0 0 5px 0;
+
+ 	text-align: left;
+
+ 	border-bottom: 1px solid rgba(255, 255, 255, .3);
+ }
+ .ui-notification a
+ {
+ 	color: #fff;
+ }
+ .ui-notification a:hover
+ {
+ 	text-decoration: underline;
+ }
+ .ui-notification > .message
+ {
+ 	margin: 10px 10px 10px 10px;
+ }
+ .ui-notification.warning
+ {
+ 	color: #fff;
+ 	background: #f0ad4e;
+ }
+ .ui-notification.error
+ {
+ 	color: #fff;
+ 	background: #D24D57;
+ }
+ .ui-notification.success
+ {
+ 	color: #fff;
+ 	background: @success;
+ }
+ .ui-notification.info
+ {
+ 	color: #fff;
+ 	background: #5bc0de;
+ }
+
+/**
+ *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+ *  all your less files automatically
+ */
+// injector
+// endinjector
