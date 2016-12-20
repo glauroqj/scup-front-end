@@ -46,7 +46,7 @@
                     <div class="form-group">
                       <div class="input-group">
                         <span class="input-group-addon">Tempo</span>
-                        <input type="number" class="form-control" placeholder="Tempo" name="tempo" id="tempo" data-ng-model="tempo" required="">
+                        <input type="number" class="form-control" placeholder="Tempo em Minutos" name="tempo" id="tempo" data-ng-model="tempo" required="">
                       </div>
                     </div>
                   </div>
@@ -58,32 +58,6 @@
                   </div>
                 </form>
 
-                <div class="col-md-12">
-                  <fieldset>
-
-                    <div class="form-group">
-                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control input-md" name="user" id="user" data-ng-model="user" required="" placeholder="login">
-                      </div>
-                    </div>
-
-                    <div class="form-group">
-                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
-                        <input type="password" class="form-control input-md" name="password" id="password" data-ng-model="password"  required="" placeholder="senha">
-                      </div>
-                    </div>
-
-                    <div class="form-group">
-                      <div class="col-lg-offset-2 col-lg-8">
-                        <button type="submit" class="btn btn-login btn-md btn-block">Entrar</button>
-                      </div>
-                    </div>
-
-                  </fieldset>
-                </div>
-
               </div> <!-- form login -->
 
             </div>
@@ -92,32 +66,34 @@
         </div>
       </div> <!-- row -->
 
-      <div class="row">
-      <div class="col-md-3 text-center">
-          <h4>Fale + 30</h4>
-          <div class="price">
-            R$ <span></span>
+      <div class="plans">
+        <div class="row">
+          <div class="col-md-3 text-center">
+            <h4>Fale + 30</h4>
+            <div class="price">
+              R$ <span>{{Principal.fale30}}</span>
+            </div>
           </div>
-        </div>
 
-        <div class="col-md-3 text-center">
-          <h4>Fale + 60</h4>
-          <div class="price">
-            R$ <span></span>
+          <div class="col-md-3 text-center">
+            <h4>Fale + 60</h4>
+            <div class="price">
+              R$ <span>{{Principal.fale60}}</span>
+            </div>
           </div>
-        </div>
 
-        <div class="col-md-3 text-center">
-          <h4>Fale + 120</h4>
-          <div class="price">
-            R$ <span></span>
+          <div class="col-md-3 text-center">
+            <h4>Fale + 120</h4>
+            <div class="price">
+              R$ <span>{{Principal.fale120}}</span>
+            </div>
           </div>
-        </div>
 
-        <div class="col-md-3 text-center">
-          <h4>Normal</h4>
-          <div class="price">
-            R$ <span></span>
+          <div class="col-md-3 text-center">
+            <h4>Normal</h4>
+            <div class="price">
+              R$ <span>{{Principal.normal}}</span>
+            </div>
           </div>
         </div>
       </div>

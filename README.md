@@ -8,15 +8,7 @@ Passo a Passo
 
 ----------------------------------
 
-Acesso
-
--- Admin
-    login: admin
-    senha: 123456
-
--- User
-    login: user
-    senha: 123456
+Qualquer dúvida só entrar em contato!
 
 ----------------------------------
 
@@ -26,3 +18,6 @@ Node.js
 Angular.js
 Gulp
 Less
+
+
+Glauro Quintão Juliani

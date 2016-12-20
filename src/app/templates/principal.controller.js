@@ -7,6 +7,10 @@
 
 	function PrincipalController($rootScope, $uibModal, $log, Notification, $location, DetailsService, PriceService, $cookies) {
 		var vm = this;
+		var fale30 = 0;
+		var fale60 = 0;
+		var fale120 = 0;
+		var normal = 0;
 
 		function call_ddd() {
 			DetailsService.verify().then(function(response) {
@@ -25,57 +29,62 @@
 			console.log(origem, destino, tempo)
 			PriceService.pricing().then(function(response) {
 				vm.prices = response;
-			});
-		}
+				vm.prices.data.forEach(function(price) {
+					vm.origin = price.origin;
+					vm.destiny = price.destiny;
+					vm.price = price.price;
 
+					if ( origem == vm.origin && destino == vm.destiny ) {
 
-		/*separação
-		var posicao = 0;
-		var login_status_admin = false;
-		var login_status_user = false;
+						if ( tempo <= 30 ) {
+							fale30 = vm.price * tempo * 0;
+							vm.fale30 = fale30;
+							console.log(vm.fale30)
+						} 
+						else {
+							fale30 = (tempo - 30) * vm.price;
+							vm.fale30 = fale30;
+							console.log(vm.fale30)
+						}
 
-		vm.submit = function submit (user, password) {
-			vm.response = {};
-			AuthLoginService.verify().then(function(response) {
-				vm.roles = response;
-				vm.roles.worker.forEach(function(role){
-					vm.name = role.name;
-					vm.pass = role.pass;
-					vm.access = role.access;
+						if ( tempo <= 60 ) {
+							fale60 = vm.price * tempo * 0;
+							vm.fale60 = fale60;
+							console.log(vm.fale60)
+						} 
+						else {
+							fale60 = (tempo - 60) * vm.price;
+							vm.fale60 = fale60;
+							console.log(fale60)
+						}
 
-					if ((user === vm.name) && (password === vm.pass) && (vm.access === 'admin')) {
-						//alert("ADMIN");
-						$location.path('/dashboard');
-						create_auth('admin');
-						Notification({message: 'Olá '+vm.name+', você está logado!'}, 'success');
-						login_status_admin = true;
+						if ( tempo <= 120 ) {
+							fale120 = vm.price * tempo * 0;
+							vm.fale120 = fale120;
+							console.log(vm.fale120)
+						} 
+						else {
+							fale120 = (tempo - 120) * vm.price;
+							vm.fale120 = fale120;
+							console.log(vm.fale120)
+						}
+
+						if ( tempo > 0 ) {
+							normal = vm.price * tempo;
+							vm.normal = normal;
+							console.log(vm.normal)
+						} 
+
 					}
-					else if ((user === vm.name) && (password === vm.pass) && (vm.access === 'user')) {
-						//alert("USER")
-						$location.path('/dashboard');
-						create_auth('user');
-						Notification({message: 'Olá '+vm.name+' você está logado!'}, 'success');
-						login_status_user = true;
+					else {
+						vm.fale30 = "-"
+						vm.fale60 = "-"
+						vm.fale120 = "-"
+						vm.normal = "-"
 					}
-
 				})
-
-				if ( (login_status_admin != true) && (login_status_user != true ) ) {
-					Notification({message: 'Login ou Senha inválidos!'}, 'error');
-				}
-
 			});
-
-		};
-
-		function create_auth (param) {
-			$cookies.put('logado', param);
 		}
-
-		// var actualCookie = $cookies.get('logado');
-		// console.log(actualCookie);
-
-		*/
 
 	}/*end*/
 
