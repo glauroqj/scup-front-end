@@ -11,6 +11,7 @@
 		var fale60 = 0;
 		var fale120 = 0;
 		var normal = 0;
+		var acrescimo = 0;
 
 		function call_ddd() {
 			DetailsService.verify().then(function(response) {
@@ -42,8 +43,10 @@
 							console.log(vm.fale30)
 						} 
 						else {
-							fale30 = (tempo - 30) * vm.price;
-							vm.fale30 = fale30;
+							acrescimo = 10 * vm.price / 100;
+							vm.price = parseFloat( vm.price );
+							fale30 =  ( tempo - 30 ) * ( vm.price + acrescimo ) ;
+							vm.fale30 = fale30.toFixed(2);
 							console.log(vm.fale30)
 						}
 
@@ -53,8 +56,10 @@
 							console.log(vm.fale60)
 						} 
 						else {
-							fale60 = (tempo - 60) * vm.price;
-							vm.fale60 = fale60;
+							acrescimo = 10 * vm.price / 100;
+							vm.price = parseFloat( vm.price );
+							fale60 =  ( tempo - 60 ) * ( vm.price + acrescimo ) ;
+							vm.fale60 = fale60.toFixed(2);
 							console.log(fale60)
 						}
 
@@ -64,14 +69,16 @@
 							console.log(vm.fale120)
 						} 
 						else {
-							fale120 = (tempo - 120) * vm.price;
-							vm.fale120 = fale120;
+							acrescimo = 10 * vm.price / 100;
+							vm.price = parseFloat( vm.price );
+							fale120 =  ( tempo - 120 ) * ( vm.price + acrescimo ) ;
+							vm.fale120 = fale120.toFixed(2);
 							console.log(vm.fale120)
 						}
 
 						if ( tempo > 0 ) {
 							normal = vm.price * tempo;
-							vm.normal = normal;
+							vm.normal = normal.toFixed(2);
 							console.log(vm.normal)
 						} 
 
